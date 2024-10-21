@@ -40,6 +40,8 @@ func main() {
 
 	*panelUrl = strings.TrimRight(*panelUrl, "/")
 
+	log.Println("3x-ui endpoint: ", *panelUrl)
+
 	jar, _ := cookiejar.New(&cookiejar.Options{
 		PublicSuffixList: publicsuffix.List,
 	})

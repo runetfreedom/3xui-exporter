@@ -17,4 +17,4 @@ RUN set -x && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -
 
 COPY --from=builder /app/3xui_exporter /app/3xui_exporter
 
-CMD ["/app/3xui_exporter"]
+ENTRYPOINT ["/app/3xui_exporter"]

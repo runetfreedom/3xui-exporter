@@ -50,6 +50,13 @@ func (collector *Collector) Describe(ch chan<- *prometheus.Desc) {
 }
 
 func (collector *Collector) Collect(ch chan<- prometheus.Metric) {
+	err := login()
+	if err != nil {
+		log.Println("login error:", err)
+
+		return
+	}
+
 	inbounds, err := getInbounds()
 	if err != nil {
 		log.Println("get inbounds error:", err)
